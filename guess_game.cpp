@@ -1,4 +1,4 @@
-//file name£ºguess_game.cpp
+//file name guess_game.cpp
 //Game for guess three numbers
 #include <iostream>
 #include <ctime>
@@ -11,11 +11,11 @@ int main()
 	char flag='Y';
 		
 	while (flag='Y') {
-		cout<<"Do you want to play a game£¿(Y/N)";
+		cout<<"Do you want to play a game?(Y/N)";
 	    cin>>flag;
 	    
 	    if (flag=='N'){
-	    	cout<<"You have played "<<count_all<<" times£¬win "<<count_win<<" times£¬lose "<<(count_all-count_win)<<" times";break;
+	    	cout<<"You have played "<<count_all<<" times,win "<<count_win<<" times,lose "<<(count_all-count_win)<<" times";break;
 		}
 		else{
 		    int count_one_game=0;
