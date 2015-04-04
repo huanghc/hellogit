@@ -45,9 +45,9 @@ void game_result(int computer,int player){
 //Description: return the value a card weighs
 double cardvalue(int i){
     if (i%13==0) return 1;
-    if (0<(i%13) && (i%13)<10) return i%13;
+    if (0<(i%13) && (i%13)<10) return (i%13)+1;
     if (i%13>9) return 0.5;
-	}
+}
 
 //Function: check_input
 //Description: make sure the input is y,n,Y,or N,and return it
@@ -90,7 +90,7 @@ void show_card_1(int number){
 //Description: cout the value of a card
 void show_card_2(int number){
 	if (number%13==0) cout<<"A";
-	if (0<(number%13) && (number%13)<10) cout<<number%13;
+	if (0<(number%13) && (number%13)<10) cout<<(number%13)+1;
 	if (number%13==10) cout<<"J";
 	if (number%13==11) cout<<"Q";
 	if (number%13==12) cout<<"K";	
@@ -211,7 +211,6 @@ int coputer(double player_sum){
 		return -1;
 	}
 	else return	computer_card_number;	
-	
 }
 
 
