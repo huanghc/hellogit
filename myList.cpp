@@ -112,9 +112,16 @@ public:
 	
 	//pop the last item
 	T pop(){
+		try { 		
+		if (lenth == 0) throw 1;
 		T b=a[lenth-1];
 		--lenth;
 		return b;
+	    }
+	    catch (int) {
+	    	cout << "The list doesn't have any elements.";
+	    	exit(-1);
+	    }		
 	};
 	
 	//insert the item
@@ -128,7 +135,7 @@ public:
 			a[index]=item;
 			++lenth;
 		}
-		catch (int) {cout<<"out of range"<<endl;}
+		catch (int) {cout<<"out of range"<<endl;exit(-1);}
 	};
 	
 	//clean a list to null
@@ -153,7 +160,7 @@ public:
 			}
 			lenth=lenth-end+start-1;
 		}
-		catch (int) {cout<<"out of range"<<endl;}		
+		catch (int) {cout<<"out of range"<<endl;exit(-1);}		
 	}; 
 	
 	//get an item from the list
@@ -162,7 +169,7 @@ public:
 			if (index>lenth) throw 1;
 			else return a[index];		
 		}
-		catch (int) {cout<<"out of range"<<endl;}				
+		catch (int) {cout<<"out of range"<<endl;exit(-1);}				
 	};
 	
 	//get a part of the list
@@ -248,10 +255,10 @@ public:
 	//redefine the operator [] 
 	T &operator [](int index){
 		try  {
-			if (index>lenth) throw 1;
+			if (index>=lenth-1) throw 1;
 			else return a[index];
 		}
-		catch (int) {cout<<"out of range"<<endl;}		
+		catch (int) {cout<<"out of range"<<endl;exit(-1);}		
 	};
 	
 	//merge sort the list  
@@ -352,11 +359,11 @@ int main(){
 	for (i=0; i<100; ++i)
 		c.push(1.1*i);	
 	cout<<"get_item:\t\t\tc="<<c.get_item(100, 105)<<endl;
-	//the index out of range
-	a[100]=15;       
-	b = a.get_item(3,18);   
-	a.erase(2, 96);
-	b.insert(20, 116);   
+//  the index out of range
+//	a[100]=15;       
+//	b = a.get_item(3,18);   
+//	a.erase(2, 96);
+//	b.insert(20, 116);   
 	return 0;
 }
 
