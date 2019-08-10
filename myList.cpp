@@ -1,6 +1,6 @@
 #include<iostream>
 using namespace std;
-
+using names
 template<class T>class MyList;
 // redefine operator list + list
 template<class T>
